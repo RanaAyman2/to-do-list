@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homestyle.css">
+  <title>Todo List - Home</title>
+  </head>
+  <body>
+    <div class="nav-logo">
+    <p id="welcomeUser" placeholder="Welcome">Welcome!</p>
+    </div>
+    <div class="language-switch"> 
+                <button id="lang-en" class="active">EN</button> 
+                <button id="lang-ar">AR</button>
+             </div> 
+    <div class="todo-container">
+    <div class="todo-input">
+      <input type="text" id="taskInput" placeholder="Enter new task...">
+      <button id="addBtn" onclick="todoApp.addTask()">Add</button>
+    </div>
+    <div> 
+   <ul id="taskList"></ul>
+   <button id="logoutBtn" onclick="logout()">Logout</button>
+
+  </div>
+  <script src="homelang.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
