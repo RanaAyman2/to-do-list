@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TO Do List</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p data-translate="todoList"> TO DO LIST</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="link active" data-translate="home">Home</a></li>
+                    <li><a href="#" class="link" data-translate="about">About</a></li>
+                    <li><a href="#" class="link" data-translate="tasks">Tasks</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()" data-translate="signin">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register()" data-translate="signup">Sign Up</button>
+                <div class="language-switch">
+                    <button id="lang-en" class="active">EN</button>
+                    <button id="lang-ar">AR</button>
+                </div>
+            </div>
+            <div class="nav-menu-btn"> <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!------ Form box ------>
+        <div class="form-box">
+
+            <!------------------- login form -------------------------->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span data-translate="noAccount">
+                        Don't have an account?
+                        <a href="#" onclick="showRegister()" data-translate="signin">Sign Up</a>
+                    </span>
+                    <header data-translate="login">Login</header>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="loginEmail" class="input-field" data-translate-placeholder="Email">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="loginPassword" class="input-field" data-translate-placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="submit" class="submit" data-translate-value="login" onclick="loginUser()">
+                </div>
+
+                <p id="loginMessage" style="color: #521c1c; text-align: center;"></p>
+
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check" data-translate="remember"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#" data-translate="forgot">Forgot password?</a></label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="registerPopup" class="popup">
+                <div class="popup-content">
+                    <p data-translate="noAccount">You don't have an account. Please register first.</p>
+                    <button onclick="showRegister(); closePopup();" class="btn" data-translate="goToRegister">Go to
+                        Register</button>
+                    <button onclick="closePopup()" class="btn" data-translate="close">Close</button>
+                </div>
+            </div>
+            <!------ registration form -------->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span data-translate="haveAccount">
+                        Have an account?
+                        <a href="#" data-translate="login" onclick="showLogin()">Login</a>
+                    </span>
+                    <header data-translate="register">Sign Up</header>
+                </div>
+
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" id="firstName" class="input-field" data-translate-placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="lastName" class="input-field" data-translate-placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="regEmail" class="input-field" data-translate-placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="regPassword" class="input-field" data-translate-placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="submit" class="submit" data-translate-value="register" onclick="registerUser()">
+                </div>
+
+                <p id="registerMessage" style="color: #521c1c; text-align: center;"></p>
+
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check" data-translate="remember"> Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#" data-translate="terms">Terms & conditions</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="lang.js"></script>
+    <script src="translate.js"></script>
+    <script src="signup.js"></script>
+    <script src="login.js"></script>
+
+</body>
+
+</html>
